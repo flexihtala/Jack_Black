@@ -22,12 +22,18 @@ class CardDeck {
         var int tNum;
         var int tSuit;
 
+        let num = random.nextRandom(0, 8);
+        let suit = random.nextRandom(0, 3);
+
         let isWork = true;
         while (isWork){
             let isWork = false;
             let k = count;
-            let num = random.nextRandom(0, 8);
-            let suit = random.nextRandom(0, 3);
+            let num = num + 1;
+            if (num > 8) {
+                let num = 0;
+                let suit = EMath.mod(suit + 1, 4);
+            } 
             let card = Card.new(num, suit);
             while (k > 0){
                 let k = k - 1;
@@ -42,6 +48,8 @@ class CardDeck {
                 }
             }
         }
+
+        let card = new(num, suit);
         let usedCards[count] = card;
         let count = count + 1;
         return card;
