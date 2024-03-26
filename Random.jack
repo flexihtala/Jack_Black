@@ -1,0 +1,106 @@
+class Random{
+    field int seed;
+    field int left;
+    field int right;
+    field int current;
+    field int i;
+    field Array nums;
+
+    constructor Random new(int Seed, int Left, int Right){
+        let seed = Seed;
+        let left = Left;
+        let right = Right;
+        let current = EMath.mod(765, right - left) + left;
+        let i = 0;
+        let nums = Array.new(52);
+        let nums[0] = 782;
+        let nums[1] = 983;
+        let nums[2] = 113;
+        let nums[3] = 140;
+        let nums[4] = 228;
+        let nums[5] = 758;
+        let nums[6] = 420;
+        let nums[7] = 993;
+        let nums[8] = 543;
+        let nums[9] = 1711;
+        let nums[10] = 984;
+        let nums[11] = 2212;
+        let nums[12] = 1488;
+        let nums[13] = 980;
+        let nums[14] = 678;
+        let nums[15] = 329;
+        let nums[16] = 123;
+        let nums[17] = 984;
+        let nums[18] = 934;
+        let nums[19] = 912;
+        let nums[20] = 2904;
+        let nums[21] = 1144;
+        let nums[22] = 4605;
+        let nums[23] = 3224;
+        let nums[24] = 2821;
+        let nums[25] = 1871;
+        let nums[26] = 2545;
+        let nums[27] = 367;
+        let nums[28] = 2687;
+        let nums[29] = 2747;
+        let nums[30] = 2139;
+        let nums[31] = 3341;
+        let nums[32] = 4887;
+        let nums[33] = 2742;
+        let nums[34] = 1841;
+        let nums[35] = 2586;
+        let nums[36] = 4713;
+        let nums[37] = 1300;
+        let nums[38] = 580;
+        let nums[39] = 888;
+        let nums[40] = 3951;
+        let nums[41] = 4581;
+        let nums[42] = 3115;
+        let nums[43] = 2208;
+        let nums[44] = 2905;
+        let nums[45] = 4819;
+        let nums[46] = 2436;
+        let nums[47] = 2977;
+        let nums[48] = 4776;
+        let nums[49] = 1101;
+        let nums[50] = 2115;
+        let nums[51] = 2182;
+        return this;
+    }
+
+    method void dispose() {
+        do Memory.deAlloc(this);
+        return;
+    }
+
+    method int getHashCode(string line){
+        var int i;
+        var int seed;
+        let i = Math.min(10, String.length(line));
+        while (i > 0) {
+            let seed = EMath.pow((seed + line[i]), 19) + 17;
+        }
+        return seed;
+    }
+
+    method int getCurrent(){
+        return current;
+    }
+
+    method int next() {
+        let seed = EMath.pow(seed+17, 19); 
+        return seed;
+    }
+    // я пытался написать честный рандом, но в яке нельзя представить
+    // чар в виде инта, а при переполнении инта машина тупо зависает
+
+    method int nextRandom(){
+        let current = EMath.mod(nums[i], right-left)+left;
+        let i = i + 1;
+        if (i = 52){
+            let i = 0;
+        }
+        return current;
+    }
+
+}

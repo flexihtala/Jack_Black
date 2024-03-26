@@ -1,0 +1,16 @@
+class EMath {
+    function int pow(int num, int power) {
+        var int res;
+        let res = num;
+        while (power > 0) {
+            let res = res * num;
+        }
+        return res;
+    }
+
+    function int mod(int a, int b){
+        var int res;
+        let res = a - ((a/b)*b);
+        return res;
+    }
+}
