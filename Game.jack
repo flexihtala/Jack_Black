@@ -1,0 +1,25 @@
+class Game {
+    field Player Player1;
+    field Player Player2;
+    field bool Player1Exit;
+    field bool Player2Exit;
+
+    function void Game () {
+        while (1) 
+        {
+            if (Player1Exit)
+            {
+                P1.Play();
+            }
+            if (Player2Exit)
+            {
+                P2.Play();
+            }
+        }
+    }
+
+    function void Play ( arguments ) {
+         code
+    }
+
+}
