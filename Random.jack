@@ -1,16 +1,10 @@
 class Random{
-    field int seed;
-    field int left;
-    field int right;
     field int current;
     field int i;
     field Array nums;
 
-    constructor Random new(int Seed, int Left, int Right){
-        let seed = Seed;
-        let left = Left;
-        let right = Right;
-        let current = EMath.mod(765, right - left) + left;
+    constructor Random new(){
+        let current = 0;
         let i = 0;
         let nums = Array.new(52);
         let nums[0] = 782;
@@ -94,7 +88,7 @@ class Random{
     // я пытался написать честный рандом, но в яке нельзя представить
     // чар в виде инта, а при переполнении инта машина тупо зависает
 
-    method int nextRandom(){
+    method int nextRandom(int left, inr right){
         let current = EMath.mod(nums[i], right-left)+left;
         let i = i + 1;
         if (i = 52){
