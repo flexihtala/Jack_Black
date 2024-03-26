@@ -782,7 +782,7 @@ class Draw{
         return;
     }
 
-    function void draw(int location) {
+    function void cross(int location) {
         var int memAddress; 
         let memAddress = 16384+location;
         // column 0
