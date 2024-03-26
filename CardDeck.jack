@@ -11,7 +11,7 @@ class CardDeck {
         return this;
     }
 
-    method getNextCard{
+    method Card getNextCard{
         var int num;
         var int suit;
         var Card card;
