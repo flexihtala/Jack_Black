@@ -647,7 +647,7 @@ class Draw{
         return;
     }
 
-    function void heart(int location) {
+    function void hearts(int location) {
         var int memAddress; 
         let memAddress = 16384+location;
         // column 0
