@@ -20,6 +20,14 @@ class Card{
         return this;
     }
 
+    method int getNum(){
+        return Num;
+    }
+
+    method int getSuit(){
+        return Suit;
+    }
+
     method void DisplayCard () {
          var int borderLocation;
          var int numLocation;

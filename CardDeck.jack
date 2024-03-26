@@ -1,0 +1,50 @@
+class CardDeck {
+    field Array usedCards;
+    field int count;
+    field Random random;
+
+    constructor CardDeck new() {
+        let usedCards = Array.new(36);
+        let count = 0;
+        let random = Random.new();
+        
+        return this;
+    }
+
+    method getNextCard{
+        var int num;
+        var int suit;
+        var Card card;
+        var int k;
+        var bool isWork;
+
+        var Card tCard;
+        var int tNum;
+        var int tSuit;
+
+        let isWork = true;
+        while (isWork){
+            let isWork = false;
+            let k = count;
+            let num = random.nextRandom(0, 8);
+            let suit = random.nextRandom(0, 3);
+            let card = Card.new(num, suit);
+            while (k > 0){
+                let k = k - 1;
+                let tCard = usedCards[k];
+                let tNum = tCard.getNum();
+                let tSuit = tCard.getSuit();
+                if (tNum = num){
+                    if (tSuit = suit){
+                        let isWork = true;
+                        let k = 0;
+                    }
+                }
+            }
+        }
+        let usedCards[count] = card;
+        let count = count + 1;
+        return card;
+    }
+
+}
