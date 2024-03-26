@@ -66,7 +66,7 @@ class Random{
         do Memory.deAlloc(this);
         return;
     }
-
+    /*
     method int getHashCode(string line){
         var int i;
         var int seed;
@@ -85,6 +85,7 @@ class Random{
         let seed = EMath.pow(seed+17, 19); 
         return seed;
     }
+    */
     // я пытался написать честный рандом, но в яке нельзя представить
     // чар в виде инта, а при переполнении инта машина тупо зависает
 
