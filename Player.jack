@@ -9,32 +9,16 @@ class Player {
     field int Score;
     field bool IsEnd;
 
-
-    constructor Player new() {
+    constructor Player new(){
         let Score = 0;
         let IsEnd = false;
         return this;
     }
 
-    method void Play(string input) {
-        if (input = "take")
-        {
-            var Card randomCard;
-            let randomCard = GetRandomCard();
-
-            let Score = Score + randomCard.Value;
-            let CurrentCardName = randomCard.Name;
-            Screen.clearScreen();
-            do DisplayCard(randomCard)
-            if (Score > 21)
-            {
-                State = 0;
-            }
-        }
-        if (input = "skip") 
-        {
-            State = 0;
-        }
+    method void SetScore(int score)
+    {
+        let Score = score;
+        return;
     }
 
     method bool GetState()
@@ -47,7 +31,7 @@ class Player {
         return Score;
     }
 
-     method void dispose() {
+    method void dispose() {
         do Memory.deAlloc(this);
         return;
     }
