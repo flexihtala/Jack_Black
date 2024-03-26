@@ -7,18 +7,17 @@ class Player {
     */
 
     field int Score;
-    field Card CurrentCard;
     field bool IsEnd;
 
 
-    constructor Card new(int num, int suit) {
-        let Score = num;
-        let CurrentCardName = suit;
+    constructor Player new() {
+        let Score = 0;
+        let IsEnd = false;
         return this;
     }
 
-    method void Play ( string input ) {
-        if (input == "take")
+    method void Play(string input) {
+        if (input = "take")
         {
             var Card randomCard;
             let randomCard = GetRandomCard();
@@ -32,7 +31,7 @@ class Player {
                 State = 0;
             }
         }
-        if (input == "skip") 
+        if (input = "skip") 
         {
             State = 0;
         }
