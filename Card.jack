@@ -1,0 +1,15 @@
+class Card{
+    /*suits:
+    0 - hearts
+    1 - spades
+    2 - clubs
+    3 - diamonds
+    */
+    field int Num, Suit;
+
+    constructor Card new(int num, int suit) {
+        let Num = num;
+        let Suit = suit;
+        return this;
+    }
+}
