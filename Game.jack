@@ -1,25 +1,37 @@
 class Game {
     field Player Player1;
     field Player Player2;
-    field bool Player1Exit;
-    field bool Player2Exit;
+    field bool Player1End;
+    field bool Player2End
 
-    function void Game () {
-        while (1) 
+    function void Game () 
+    {
+        while (Player1End)
         {
-            if (Player1Exit)
-            {
-                P1.Play();
-            }
-            if (Player2Exit)
-            {
-                P2.Play();
-            }
+            var string input;
+            let input = Keyboard.readLine();
+            do Player1.Play(input);
+            let Player1End = Player1.GetState();
+        }
+        while (Player2End)
+        {
+            var string input;
+            let input = Keyboard.readLine();
+            do Player2.Play(input);
+            let Player2End = Player2.GetState();
+        }
+        Screen.
+        if (Player1.GetScore() > Player2.GetScore())
+        {
+            Output.printString("Player1 wins! Thanks for the game :)")
+        }
+        if (Player2.GetScore() > Player1.GetScore())
+        {
+            Output.printString("Player2 wins! Thanks for the game :)")
+        }
+        if (Player2.GetScore() == Player1.GetScore())
+        {
+            Output.printString("Draw! Thanks for the game :)")
         }
     }
-
-    function void Play ( arguments ) {
-         code
-    }
-
 }
