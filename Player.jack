@@ -1,0 +1,55 @@
+class Player {
+    /*suits:
+    0 - hearts
+    1 - spades
+    2 - clubs
+    3 - diamonds
+    */
+
+    field int Score;
+    field Card CurrentCard;
+    field bool IsEnd;
+
+
+    constructor Card new(int num, int suit) {
+        let Score = num;
+        let CurrentCardName = suit;
+        return this;
+    }
+
+    method void Play ( string input ) {
+        if (input == "take")
+        {
+            var Card randomCard;
+            let randomCard = GetRandomCard();
+
+            let Score = Score + randomCard.Value;
+            let CurrentCardName = randomCard.Name;
+            Screen.clearScreen();
+            do DisplayCard(randomCard)
+            if (Score > 21)
+            {
+                State = 0;
+            }
+        }
+        if (input == "skip") 
+        {
+            State = 0;
+        }
+    }
+
+    method bool GetState()
+    {
+        return IsEnd;
+    }
+
+    method int GetScore() 
+    {
+        return Score;
+    }
+
+     method void dispose() {
+        do Memory.deAlloc(this);
+        return;
+    }
+}

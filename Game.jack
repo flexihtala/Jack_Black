@@ -1,26 +1,30 @@
 class Game {
     field Player Player1;
     field Player Player2;
-    field bool Player1End;
-    field bool Player2End
+    field bool Player1NotEnd;
+    field bool Player2NotEnd;
 
     function void Game () 
     {
-        while (Player1End)
+        let Player1NotEnd = 1;
+        let Plater2NotEnd = 1;
+        while (Player1NotEnd)
         {
             var string input;
             let input = Keyboard.readLine();
             do Player1.Play(input);
-            let Player1End = Player1.GetState();
+            let Player1NotEnd = Player1.GetState();
         }
-        while (Player2End)
+
+        Screen.clearScreen();
+
+        while (Player2NotEnd)
         {
             var string input;
             let input = Keyboard.readLine();
             do Player2.Play(input);
-            let Player2End = Player2.GetState();
+            let Player2NotEnd = Player2.GetState();
         }
-        Screen.
         if (Player1.GetScore() > Player2.GetScore())
         {
             Output.printString("Player1 wins! Thanks for the game :)")

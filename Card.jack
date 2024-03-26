@@ -86,4 +86,9 @@ class Card{
             do Draw.diamonds(2369);
          }
     }
+
+   method void dispose() {
+      do Memory.deAlloc(this);
+      return;
+    }
 }
