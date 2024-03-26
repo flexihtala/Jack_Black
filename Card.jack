@@ -1,4 +1,4 @@
-class Card{
+class Card{    
     /*Nums:
     11 - jack
     12 - queen
@@ -9,9 +9,10 @@ class Card{
     /*suits:
     0 - hearts
     1 - spades
-    2 - clubs
+    2 - cross
     3 - diamonds
     */
+
     field int Num, Suit;
 
     constructor Card new(int num, int suit) {
@@ -33,58 +34,59 @@ class Card{
          var int numLocation;
          var int suitLocation;
          do Draw.border(0);
-         if (Num == 6)
+         if (Num = 6)
          {
             do Draw.six(641);
          }
-         if (Num == 7)
+         if (Num = 7)
          {
             do Draw.seven(641);
          }
-         if (Num == 8)
+         if (Num = 8)
          {
             do Draw.eight(641);
          }
-         if (Num == 9)
+         if (Num = 9)
          {
             do Draw.nine(641);
          }
-         if (Num == 10)
+         if (Num = 10)
          {
             do Draw.ten(641);
          }
-         if (Num == 11)
+         if (Num = 11)
          {
             do Draw.jack(641);
          }
-         if (Num == 12)
+         if (Num = 12)
          {
             do Draw.queen(641);
          }
-         if (Num == 13)
+         if (Num = 13)
          {
             do Draw.king(641);
          }
-         if (Num == 14)
+         if (Num = 14)
          {
             do Draw.ace(641);
          }
-         if (suit == 0)
+         if (Suit = 0)
          {
             do Draw.hearts(2369);
          }
-         if (suit == 1)
+         if (Suit = 1)
          {
             do Draw.spades(2369);
          }
-         if (suit == 2)
+         if (Suit = 2)
          {
-            do Draw.clubs(2369)
+            do Draw.cross(2369);
          }
-         if (suit == 3)
+         if (Suit = 3)
          {
             do Draw.diamonds(2369);
          }
+         return;
     }
 
    method void dispose() {
