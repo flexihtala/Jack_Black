@@ -1,0 +1,219 @@
+function Random.new 0
+push constant 3
+call Memory.alloc 1
+pop pointer 0
+push constant 0
+pop this 0
+push constant 0
+pop this 1
+push constant 52
+call Array.new 1
+pop this 2
+push constant 0
+push this 2
+add
+push constant 782
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 1
+push this 2
+add
+push constant 983
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 2
+push this 2
+add
+push constant 113
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 3
+push this 2
+add
+push constant 140
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 4
+push this 2
+add
+push constant 228
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 5
+push this 2
+add
+push constant 758
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 6
+push this 2
+add
+push constant 420
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 7
+push this 2
+add
+push constant 993
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 8
+push this 2
+add
+push constant 543
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 9
+push this 2
+add
+push constant 1711
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 10
+push this 2
+add
+push constant 984
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 11
+push this 2
+add
+push constant 2212
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 12
+push this 2
+add
+push constant 1488
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 13
+push this 2
+add
+push constant 980
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 14
+push this 2
+add
+push constant 678
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 15
+push this 2
+add
+push constant 329
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 16
+push this 2
+add
+push constant 123
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 17
+push this 2
+add
+push constant 984
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 18
+push this 2
+add
+push constant 934
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 19
+push this 2
+add
+push constant 912
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push constant 20
+push this 2
+add
+push constant 2904
+pop temp 0
+pop pointer 1
+push temp 0
+pop that 0
+push pointer 0
+return
+function Random.dispose 0
+push argument 0
+pop pointer 0
+push pointer 0
+call Memory.deAlloc 1
+pop temp 0
+push constant 0
+return
+function Random.nextRandom 0
+push argument 0
+pop pointer 0
+push this 1
+push this 2
+add
+pop pointer 1
+push that 0
+push argument 2
+push argument 1
+sub
+call EMath.mod 2
+push argument 1
+add
+pop this 0
+push this 1
+push constant 1
+add
+pop this 1
+push this 1
+push constant 20
+eq
+if-goto IF_TRUE0
+goto IF_FALSE0
+label IF_TRUE0
+push constant 0
+pop this 1
+label IF_FALSE0
+push this 0
+return
