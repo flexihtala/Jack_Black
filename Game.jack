@@ -1,13 +1,13 @@
 class Game {
-    field Player Player1;
-    field Player Player2;
+    field int Score1;
+    field int Score2;
     field bool Player1End;
     field bool Player2End;
     field CardDeck Deck; 
 
-    constructor Game new(){
-        let Player1 = Player.new();
-        let Player2 = Player.new();
+    constructor Game new() {
+        let Score1 = 0;
+        let Score2 = 0; 
         let Player1End = false;
         let Player2End = false;
         let Deck = CardDeck.new();
@@ -16,27 +16,27 @@ class Game {
 
     method void Game() 
     {
-        var string input;
+        var int input;
         var Card randomCard;
         while (~Player1End)
         {
-            let input = Keyboard.readLine("take new card by 'take' or end by 'skip'");
+            let input = Keyboard.readInt("take new card by '0' or end by '1'");
 
-            if (input = "take")
+            if (input = 0)
             {
                 let randomCard = Deck.getNextCard();
 
-                do Player1.SetScore(Player1.GetScore() + randomCard.getNum());
+                let Score1 = Score1 + randomCard.getNum();
                 do Screen.clearScreen();
                 do randomCard.DisplayCard();
-                if (Player1.GetScore() > 21)
+                if (Score1 > 21)
                 {
                     let Player1End = true;
                 }
             }
-            if (input = "skip") 
+            if (input = 1) 
             {
-                let Player1End= true;
+                let Player1End = true;
             }
         }
 
@@ -46,34 +46,34 @@ class Game {
 
         while (~Player2End)
         {
-            let input = Keyboard.readLine("take new card by 'take' or end by 'skip'");
+            let input = Keyboard.readInt("take new card by '0' or end by '1'");
 
-            if (input = "take")
+            if (input = 0)
             {
                 let randomCard = Deck.getNextCard();
                 
-                do Player2.SetScore(Player2.GetScore() + randomCard.getNum());
+                let Score2 = Score2 + randomCard.getNum();
                 do Screen.clearScreen();
                 do randomCard.DisplayCard();
-                if (Player2.GetScore() > 21)
+                if (Score2 > 21)
                 {
                     let Player2End = true;
                 }
             }
-            if (input = "skip") 
+            if (input = 1) 
             {
                 let Player2End = true;
             }
         }
-        if (Player1.GetScore() > Player2.GetScore())
+        if (Score1 > Score2)
         {
             do Output.printString("Player1 wins! Thanks for the game :)");
         }
-        if (Player2.GetScore() > Player1.GetScore())
+        if (Score2 > Score1)
         {
             do Output.printString("Player2 wins! Thanks for the game :)");
         }
-        if (Player2.GetScore() = Player1.GetScore())
+        if (Score2 = Score1)
         {
             do Output.printString("Draw! Thanks for the game :)");
         }

@@ -34,39 +34,39 @@ class Card{
          var int numLocation;
          var int suitLocation;
          do Draw.border(0);
-         if (Num = 6)
+         if (Num = 0)
          {
             do Draw.six(641);
          }
-         if (Num = 7)
+         if (Num = 1)
          {
             do Draw.seven(641);
          }
-         if (Num = 8)
+         if (Num = 2)
          {
             do Draw.eight(641);
          }
-         if (Num = 9)
+         if (Num = 3)
          {
             do Draw.nine(641);
          }
-         if (Num = 10)
+         if (Num = 4)
          {
             do Draw.ten(641);
          }
-         if (Num = 11)
+         if (Num = 5)
          {
             do Draw.jack(641);
          }
-         if (Num = 12)
+         if (Num = 6)
          {
             do Draw.queen(641);
          }
-         if (Num = 13)
+         if (Num = 7)
          {
             do Draw.king(641);
          }
-         if (Num = 14)
+         if (Num = 8)
          {
             do Draw.ace(641);
          }
@@ -86,6 +86,8 @@ class Card{
          {
             do Draw.diamonds(2369);
          }
+         do Sys.wait(2000);
+         do Screen.clearScreen();
          return;
     }
 
