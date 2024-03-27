@@ -20,7 +20,7 @@ class Game {
         var Card randomCard;
         while (~Player1End)
         {
-            let input = Keyboard.readLine("take new card by 'take' or end by 'skip'");
+            let input = Keyboard.readLine("take new card by 'take' or end by 'skip': ");
 
             if (input = "take")
             {
@@ -46,7 +46,7 @@ class Game {
 
         while (~Player2End)
         {
-            let input = Keyboard.readLine("take new card by 'take' or end by 'skip'");
+            let input = Keyboard.readLine("take new card by 'take' or end by 'skip': ");
 
             if (input = "take")
             {
